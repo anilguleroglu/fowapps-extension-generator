@@ -19,6 +19,9 @@ const itemTypes = [
   { id: 1, name: 'button', displayName: 'Custom Button' },
   { id: 2, name: 'link', displayName: 'Custom Link' }
 ]
+const areas = [
+  'lead.detail', 'lead.list', 'contact.detail', 'contact.list', 'account.detail', 'account.list', 'opportunity.detail', 'opportunity.list'
+]
 const App = () => {
   const [configuration, setConfiguration] = useState([]);
   const [items, setItems] = useState([]);
@@ -30,7 +33,7 @@ const App = () => {
       delete item.id
       return item;
     })
-    obj['items']=items.map(item => {
+    obj['items'] = items.map(item => {
       delete item.id
       delete item.type
       return item;
@@ -85,6 +88,7 @@ const App = () => {
         id: uuidv4(),
         typeName: type.name,
         type: type,
+        areas: [],
         name: '',
         displayName: '',
         action: {
@@ -98,6 +102,7 @@ const App = () => {
         id: uuidv4(),
         typeName: type.name,
         type: type,
+        areas: [],
         name: '',
         displayName: '',
         action: {
@@ -143,6 +148,13 @@ const App = () => {
           <Input placeholder='Display Name' onChange={(e) => setItemValue(item.id, 'displayName', e.target.value)}></Input>
         </Form.Item>
         <Form.Item
+          label="Areas"
+        >
+          <Select mode="multiple" allowClear onChange={(val) => setItemValue(item.id, 'areas', val)}>
+            {areas.map(item => (<Select.Option value={item}>{item}</Select.Option>))}
+          </Select>
+        </Form.Item>
+        <Form.Item
           label="Action.Url"
         >
           <Input placeholder='Url' onChange={(e) => setItemValue(item.id, 'action.url', e.target.value)}></Input>
@@ -172,6 +184,13 @@ const App = () => {
           label="DisplayName"
         >
           <Input placeholder='Display Name' onChange={(e) => setItemValue(item.id, 'displayName', e.target.value)}></Input>
+        </Form.Item>
+        <Form.Item
+          label="Areas"
+        >
+          <Select mode="multiple" allowClear onChange={(val) => setItemValue(item.id, 'areas', val)}>
+            {areas.map(item => (<Select.Option value={item}>{item}</Select.Option>))}
+          </Select>
         </Form.Item>
         <Form.Item
           label="Action.Url"
