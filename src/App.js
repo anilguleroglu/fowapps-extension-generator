@@ -80,7 +80,7 @@ const App = () => {
   const addItem = () => {
     var _items = [...items];
     var type = itemTypes.find(x => x.id === itemType);
-    if (type.id == 1) {
+    if (type.id === 1) {
       _items.push({
         id: uuidv4(),
         typeName: type.name,
@@ -93,7 +93,7 @@ const App = () => {
         }
       })
     }
-    else if (type.id == 2) {
+    else if (type.id === 2) {
       _items.push({
         id: uuidv4(),
         typeName: type.name,
