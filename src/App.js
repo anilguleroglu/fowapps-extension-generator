@@ -65,21 +65,21 @@ const App = () => {
 
   const setConfigItem = (id, name, e) => {
     var configs = [...configuration];
-    var item = configs.find(x => x.id == id);
+    var item = configs.find(x => x.id === id);
     item[name] = e.target.value;
     setConfiguration(configs);
   }
 
   const removeConfigItem = (id) => {
     var configs = [...configuration];
-    var item = configs.find(x => x.id == id);
+    var item = configs.find(x => x.id === id);
     configs.splice(configs.indexOf(item), 1);
     setConfiguration(configs);
   }
 
   const addItem = () => {
     var _items = [...items];
-    var type = itemTypes.find(x => x.id == itemType);
+    var type = itemTypes.find(x => x.id === itemType);
     if (type.id == 1) {
       _items.push({
         id: uuidv4(),
@@ -111,15 +111,15 @@ const App = () => {
 
   const removeItem = (id) => {
     var _items = [...items];
-    var item = _items.find(x => x.id == id);
+    var item = _items.find(x => x.id === id);
     _items.splice(_items.indexOf(item), 1);
     setItems(_items);
   }
 
   const setItemValue = (id, field, val) => {
     var configs = [...items];
-    var item = configs.find(x => x.id == id);
-    if (field.indexOf('.') != -1) {
+    var item = configs.find(x => x.id === id);
+    if (field.indexOf('.') !== -1) {
       var arr = field.split('.');
       item[arr[0]][arr[1]] = val;
     } else {
@@ -191,9 +191,9 @@ const App = () => {
   }
 
   const renderItem = (item) => {
-    if (item.type.id == 1) {
+    if (item.type.id === 1) {
       return renderButton(item);
-    } else if (item.type.id == 2) {
+    } else if (item.type.id === 2) {
       return renderLink(item);
     }
   }
