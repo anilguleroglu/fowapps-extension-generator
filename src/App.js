@@ -1,23 +1,17 @@
-import { Layout, Form, Input, Button, Checkbox, Row, Col, Divider, Select, Card } from 'antd';
+import { Layout, Form, Input, Button, Row, Col, Divider, Select, Card } from 'antd';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { DeleteOutlined } from '@ant-design/icons';
 import './App.css';
 
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
 const { TextArea } = Input;
 const layout = {
   labelCol: {
     span: 8,
   },
   wrapperCol: {
-    span: 16,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
     span: 16,
   },
 };
