@@ -91,10 +91,7 @@ const App = () => {
         areas: [],
         name: '',
         displayName: '',
-        action: {
-          url: null,
-          method: null
-        }
+        url:null
       })
     }
     else if (type.id === 2) {
@@ -105,10 +102,7 @@ const App = () => {
         areas: [],
         name: '',
         displayName: '',
-        action: {
-          url: null,
-          method: null
-        }
+        url:null
       })
     }
     setItems(_items);
@@ -155,18 +149,10 @@ const App = () => {
           </Select>
         </Form.Item>
         <Form.Item
-          label="Action.Url"
+          label="Url"
         >
-          <Input placeholder='Url' onChange={(e) => setItemValue(item.id, 'action.url', e.target.value)}></Input>
+          <Input placeholder='Url' onChange={(e) => setItemValue(item.id, 'url', e.target.value)}></Input>
         </Form.Item>
-        <Form.Item
-          label="Action.Method"
-        >
-          <Select onChange={(val) => setItemValue(item.id, 'action.method', val)}>
-            <Select.Option value='GET'>GET</Select.Option>
-            <Select.Option value='POST'>POST</Select.Option>
-          </Select>
-        </Form.Item >
       </div>
     )
   }
@@ -193,18 +179,10 @@ const App = () => {
           </Select>
         </Form.Item>
         <Form.Item
-          label="Action.Url"
+          label="Url"
         >
-          <Input placeholder='Url' onChange={(e) => setItemValue(item.id, 'action.url', e.target.value)}></Input>
+          <Input placeholder='Url' onChange={(e) => setItemValue(item.id, 'url', e.target.value)}></Input>
         </Form.Item>
-        <Form.Item
-          label="Action.Method"
-        >
-          <Select onChange={(val) => setItemValue(item.id, 'action.method', val)}>
-            <Select.Option value='GET'>GET</Select.Option>
-            <Select.Option value='POST'>POST</Select.Option>
-          </Select>
-        </Form.Item >
       </div>
     )
   }
